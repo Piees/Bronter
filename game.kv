@@ -1,0 +1,78 @@
+#:kivy 1.9
+
+<Bronter>:
+    button1: button1
+
+##Logo bar
+    AnchorLayout:
+        anchor_y: 'top'
+        anchor_x: 'left'
+        FloatLayout:
+            size_hint: .7, .1
+            Button:
+                pos_hint: {'x':0, 'y':0}
+                id: button1
+                text: 'Logo bar'
+                #on_press: root.show_self()
+                #on_press: root.show_bubble()
+##Navn
+    AnchorLayout:
+        anchor_y: 'top'
+        anchor_x: 'right'
+        FloatLayout:
+            size_hint: .2, .1
+            Button:
+                pos_hint: {'x':-.5, 'y':0}
+                id: button2
+                text: 'Navn'
+##options
+    AnchorLayout:
+        anchor_y: 'top'
+        anchor_x: 'right'
+        FloatLayout:
+            size_hint: .1, .1
+            Button:
+                pos_hint: {'x':0, 'y':0}
+                id: button2
+                text: 'Options'
+
+<modulinnhold>:
+    size_hint: (None, None)
+    size: (320, 50)
+    pos_hint: {'center_x': .3, 'y': .89}
+    #arrow_pos: 'bottom_mid'
+    #arrow_image: 'images/bubble.png'
+    background_image: 'images/bubble.png'
+    BubbleButton:
+        background_color: (3, 3, 3, 3)
+        text: 'Modul 1'
+    BubbleButton:
+        background_color: (3, 3, 3, 3)
+        text: 'Modul 2'
+    BubbleButton:
+        background_color: (3, 3, 3, 3)
+        text: 'Modul 3'
+    BubbleButton:
+        background_color: (3, 3, 3, 3)
+        text: 'Modul 4'
+    BubbleButton:
+        background_color: (3, 3, 3, 3)
+        text: 'Modul 5'
+
+<menu>:
+    moduloversikt: moduloversikt
+    size_hint: (1, .1)
+    #size: (720, 70)
+    pos_hint: {'center_x': 0.5, 'y': .79}
+    background_image: 'images/bubble.png'
+    BubbleButton:
+        id: moduloversikt
+        on_release: root.show_bubble()
+        background_color: (3, 3, 3, 3)
+        text: 'Moduler'
+    BubbleButton:
+        background_color: (3, 3, 3, 3)
+        text: 'Innleveringer'
+    BubbleButton:
+        background_color: (3, 3, 3, 3)
+        text: 'Eksamen'
